@@ -14,7 +14,7 @@ import {
 import HeroSection from './components/HeroSection'
 import ProjectsSection from './components/ProjectsSection'
 import ExperienceSection from './components/ExperienceSection'
-import FdfSection from './components/FdfSection'
+// import FdfSection from './components/FdfSection'
 import SectionsSidebar from './components/SectionsSidebar'
 import SiteHeader from './components/SiteHeader'
 import { uiText, type Language } from './content/uiText.ts'
@@ -261,7 +261,7 @@ export default function App() {
           currentSkillGroups={currentSkillGroups}
           registerRevealRef={registerRevealRef}
         />
-        {/* <FdfSection text={text} registerRevealRef={registerRevealRef} /> */}
+        <FdfSection text={text} registerRevealRef={registerRevealRef} />
       </main>
 
       <footer className="border-t border-white/5 py-24 text-center">
