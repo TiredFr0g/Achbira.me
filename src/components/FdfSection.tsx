@@ -1,14 +1,19 @@
+import { useRef } from 'react'
 import FdfCanvas from './FdfCanvas'
+import { useRevealOnScroll } from './sectionMotion'
 
 type FdfSectionProps = {
   text: Record<string, string>
-  registerRevealRef: (index: number) => (element: HTMLElement | null) => void
 }
 
-export default function FdfSection({ text, registerRevealRef }: FdfSectionProps) {
+export default function FdfSection({ text }: FdfSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useRevealOnScroll(sectionRef)
+
   return (
-    <section id="fdf" className="mx-auto max-w-7xl px-4 pb-24 pt-4 sm:px-8 sm:pt-8">
-      <div ref={registerRevealRef(11)} className="reveal border border-white/10 bg-white/2 p-5 sm:p-6 md:p-8">
+    <section ref={sectionRef} id="fdf" className="mx-auto max-w-7xl px-4 pb-24 pt-4 sm:px-8 sm:pt-8">
+      <div className="reveal border border-white/10 bg-white/2 p-5 sm:p-6 md:p-8">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-mono-tech text-[10px] tracking-[0.22em] text-slate-500">{text.fdfLabel}</p>

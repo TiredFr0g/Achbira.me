@@ -15,7 +15,7 @@ export const uiText: UiTextMap = {
     titleTop: 'BACKEND',
     titleBottom: 'ENGINEER',
     heroIntro:
-      'Full-Stack Software Engineering student at 1337 with strong foundations in systems programming, networking, and backend development. Currently seeking a Full-Stack / Backend internship. I build scalable and secure applications with',
+      'Full-Stack Software Engineering student at 1337 with strong foundations in systems programming, networking, and backend development. Seeking a Software Engineering Internship to apply my systems-level rigor (C/C++) and full-stack expertise (Django/React) to scalable, production-grade architectures. I build scalable and secure applications with',
     statsProjects: 'PROJECTS',
     statsStack: 'TECH STACK',
     statsSchool: 'SCHOOL',
@@ -67,7 +67,7 @@ export const uiText: UiTextMap = {
     titleTop: 'INGENIEUR',
     titleBottom: 'BACKEND',
     heroIntro:
-      'Etudiant en ingenierie logicielle full-stack a 1337, avec des bases solides en programmation systeme, reseaux et backend. Actuellement a la recherche d un stage Full-Stack / Backend. Je construis des applications scalables et securisees avec',
+      'Etudiant en ingenierie logicielle full-stack a 1337, avec des bases solides en programmation systeme, reseaux et backend. A la recherche d un stage en ingenierie logicielle pour mettre a profit ma rigueur systeme (C/C++) et mon expertise full-stack (Django/React) dans des architectures scalables et prêtes pour la production. Je construis des applications scalables et securisees avec',
     statsProjects: 'PROJETS',
     statsStack: 'TECH STACK',
     statsSchool: 'ECOLE',

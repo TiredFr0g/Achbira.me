@@ -1,11 +1,14 @@
+import { useScrollProgress } from './sectionMotion'
+
 type SiteHeaderProps = {
   text: Record<string, string>
   language: 'en' | 'fr'
   onLanguageChange: (language: 'en' | 'fr') => void
-  scrollProgress: number
 }
 
-export default function SiteHeader({ text, language, onLanguageChange, scrollProgress }: SiteHeaderProps) {
+export default function SiteHeader({ text, language, onLanguageChange }: SiteHeaderProps) {
+  const scrollProgress = useScrollProgress()
+
   return (
     <nav className="fixed top-0 z-40 flex w-full items-center justify-between border-b border-white/5 bg-[#020617]/80 px-4 py-5 backdrop-blur-lg sm:px-8">
       <div className="flex items-center gap-3">

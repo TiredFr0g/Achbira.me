@@ -1,5 +1,19 @@
 import type { ProjectCard, ProjectDeepDive } from './types/project'
 
+export type PortfolioContent = {
+  projectCards: ProjectCard[]
+  projectDeepDives: Record<string, ProjectDeepDive>
+  educationItems: Array<{
+    school: string
+    program: string
+    details: string[]
+  }>
+  skillGroups: Array<{
+    category: string
+    value: string
+  }>
+}
+
 const projectCards: ProjectCard[] = [
   {
     icon: 'newspaper',
@@ -270,5 +284,11 @@ const skillGroups = [
   },
 ]
 
+const portfolioContent: PortfolioContent = {
+  projectCards,
+  projectDeepDives,
+  educationItems,
+  skillGroups,
+}
 
-export { projectCards, projectDeepDives, educationItems, skillGroups }
+export { portfolioContent, projectCards, projectDeepDives, educationItems, skillGroups }

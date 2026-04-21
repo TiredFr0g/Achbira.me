@@ -1,3 +1,5 @@
+import { useActiveSection } from './sectionMotion'
+
 type SectionItem = {
   id: string
   label: string
@@ -5,12 +7,17 @@ type SectionItem = {
 }
 
 type SectionsSidebarProps = {
-  activeSection: string
-  sectionItems: readonly SectionItem[]
-  onSectionChange: (sectionId: string) => void
+  text: Record<string, string>
 }
 
-export default function SectionsSidebar({ activeSection, sectionItems, onSectionChange }: SectionsSidebarProps) {
+export default function SectionsSidebar({ text }: SectionsSidebarProps) {
+  const sectionItems: SectionItem[] = [
+    { id: 'architecture', label: text.about, icon: 'home' },
+    { id: 'projects', label: text.projects, icon: 'deployed_code' },
+    { id: 'experience', label: text.educationAndSkills, icon: 'school' },
+  ]
+  const activeSection = useActiveSection(sectionItems.map((section) => section.id))
+
   return (
     <aside className="fixed top-1/2 right-4 z-50 hidden -translate-y-1/2 md:flex">
       <div className="border border-white/10 bg-[#020617]/80 px-3 py-3 backdrop-blur-lg">
@@ -23,7 +30,6 @@ export default function SectionsSidebar({ activeSection, sectionItems, onSection
                 key={section.id}
                 className={`group relative flex items-center gap-3 transition ${isActive ? 'text-white' : 'text-slate-500 hover:text-slate-200'}`}
                 href={`#${section.id}`}
-                onClick={() => onSectionChange(section.id)}
                 title={section.label}
               >
                 <span

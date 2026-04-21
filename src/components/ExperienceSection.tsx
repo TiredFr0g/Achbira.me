@@ -1,3 +1,6 @@
+import { useRef } from 'react'
+import { useRevealOnScroll } from './sectionMotion'
+
 type EducationItem = {
   school: string
   program: string
@@ -13,13 +16,16 @@ type ExperienceSectionProps = {
   text: Record<string, string>
   currentEducationItems: EducationItem[]
   currentSkillGroups: SkillGroup[]
-  registerRevealRef: (index: number) => (element: HTMLElement | null) => void
 }
 
-export default function ExperienceSection({ text, currentEducationItems, currentSkillGroups, registerRevealRef }: ExperienceSectionProps) {
+export default function ExperienceSection({ text, currentEducationItems, currentSkillGroups }: ExperienceSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useRevealOnScroll(sectionRef)
+
   return (
-    <section id="experience" className="mx-auto max-w-7xl px-4 pb-24 sm:px-8">
-      <div ref={registerRevealRef(10)} className="reveal border border-white/10 bg-white/2 p-8 md:p-10">
+    <section ref={sectionRef} id="experience" className="mx-auto max-w-7xl px-4 pb-24 sm:px-8">
+      <div className="reveal border border-white/10 bg-white/2 p-8 md:p-10">
         <p className="font-mono-tech text-[10px] tracking-[0.25em] text-slate-500">{text.educationSkills}</p>
         <h3 className="mt-4 max-w-xl text-balance font-headline text-2xl font-black leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-left">
           {text.foundation}

@@ -1,4 +1,5 @@
 import type { ProjectCard, ProjectDeepDive } from './types/project'
+import type { PortfolioContent } from './data.ts'
 
 const projectCards: ProjectCard[] = [
   {
@@ -270,4 +271,11 @@ const skillGroups = [
   },
 ]
 
-export { projectCards, projectDeepDives, educationItems, skillGroups }
+const portfolioContent: PortfolioContent = {
+  projectCards,
+  projectDeepDives,
+  educationItems,
+  skillGroups,
+}
+
+export { portfolioContent, projectCards, projectDeepDives, educationItems, skillGroups }

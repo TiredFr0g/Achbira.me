@@ -1,16 +1,22 @@
+import { useRef } from 'react'
+import { useRevealOnScroll, useTiltInteractions } from './sectionMotion'
+
 type HeroSectionProps = {
   text: Record<string, string>
-  registerRevealRef: (index: number) => (element: HTMLElement | null) => void
-  registerTiltRef: (index: number) => (element: HTMLElement | null) => void
 }
 
-export default function HeroSection({ text, registerRevealRef, registerTiltRef }: HeroSectionProps) {
+export default function HeroSection({ text }: HeroSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useRevealOnScroll(sectionRef)
+  useTiltInteractions(sectionRef)
+
   return (
-    <section id="architecture" className="relative flex min-h-[85vh] items-center overflow-hidden px-4 pt-24 sm:px-8 sm:pt-28 md:px-16 md:pt-0">
+    <section ref={sectionRef} id="architecture" className="relative flex min-h-[85vh] items-center overflow-hidden px-4 pt-24 sm:px-8 sm:pt-28 md:px-16 md:pt-0">
       <div className="hero-backdrop pointer-events-none absolute inset-0 z-0" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 pt-14 md:pt-16 lg:grid-cols-12">
-        <div ref={registerRevealRef(0)} className="reveal lg:col-span-7">
+        <div className="reveal lg:col-span-7">
           <div className="mb-8 inline-block max-w-full wrap-break-word border border-[#22c55e]/20 bg-[#22c55e]/10 px-4 py-1.5 font-mono-tech text-[10px] tracking-widest text-[#22c55e]">
             {text.status}
           </div>
@@ -54,15 +60,11 @@ export default function HeroSection({ text, registerRevealRef, registerTiltRef }
           </p>
         </div>
 
-        <div
-          ref={registerRevealRef(1)}
-          className="reveal z-20 flex justify-center lg:col-span-5 lg:justify-self-end lg:self-center lg:-mr-4"
-        >
+        <div className="reveal z-20 flex justify-center lg:col-span-5 lg:justify-self-end lg:self-center lg:-mr-4">
           <div className="group relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-2 bg-linear-to-br from-[#22c55e]/10 via-transparent to-transparent blur-2xl opacity-60 transition-opacity group-hover:opacity-80" />
 
             <a
-              ref={registerTiltRef(0)}
               className="hero-avatar-frame tilt-card relative mx-auto block h-64 w-64 overflow-hidden border border-[#22c55e]/20 bg-[#020617] p-2 md:h-80 md:w-80"
               href="https://www.linkedin.com/in/ayoub-chbira-98b152398/"
               rel="noreferrer"
@@ -92,7 +94,7 @@ export default function HeroSection({ text, registerRevealRef, registerTiltRef }
           </div>
         </div>
 
-        <div ref={registerRevealRef(2)} className="reveal lg:col-span-12">
+        <div className="reveal lg:col-span-12">
           <div className="hero-focus-dock border border-white/10 bg-white/2 p-6 md:p-8">
             <p className="font-mono-tech text-[10px] tracking-[0.22em] text-slate-500">{text.currentFocus}</p>
             <h3 className="mt-3 font-headline text-xl font-bold text-white">{text.honingSkills}</h3>
