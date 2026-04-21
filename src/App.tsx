@@ -261,7 +261,7 @@ export default function App() {
           currentSkillGroups={currentSkillGroups}
           registerRevealRef={registerRevealRef}
         />
-        <FdfSection text={text} registerRevealRef={registerRevealRef} />
+        {/* <FdfSection text={text} registerRevealRef={registerRevealRef} /> */}
       </main>
 
       <footer className="border-t border-white/5 py-24 text-center">
