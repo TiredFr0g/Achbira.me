@@ -4,7 +4,7 @@ const projectCards: ProjectCard[] = [
   {
     icon: 'newspaper',
     iconColor: 'text-[#22c55e]',
-    version: 'EN COURS // Oriente evenements',
+    version: 'EN COURS · Oriente evenements',
     title: 'POLYNEWS',
     description:
       'Plateforme newsletter temps reel avec Django comme source de verite, Redis comme bus d evenements, diffusion WebSocket NestJS et interface React live.',
@@ -14,7 +14,7 @@ const projectCards: ProjectCard[] = [
   {
     icon: 'music_note',
     iconColor: 'text-[#22c55e]',
-    version: 'TERMINE // Equipe de 5',
+    version: 'TERMINE · Equipe de 5',
     title: 'VIBETUNE AI',
     description:
       'Plateforme sociale musicale alimentee par IA avec API REST, messagerie temps reel via Django Channels + Redis, et support i18n (EN/FR/ES).',

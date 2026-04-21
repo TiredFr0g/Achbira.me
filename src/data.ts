@@ -4,7 +4,7 @@ const projectCards: ProjectCard[] = [
   {
     icon: 'newspaper',
     iconColor: 'text-[#22c55e]',
-    version: 'IN PROGRESS // Event-Driven',
+    version: 'WIP · Event-Driven',
     title: 'POLYNEWS',
     description:
       'Real-time newsletter platform with Django as source of truth, Redis event bus, NestJS WebSocket delivery, and a React live notification UI.',
@@ -14,7 +14,7 @@ const projectCards: ProjectCard[] = [
   {
     icon: 'music_note',
     iconColor: 'text-[#22c55e]',
-    version: 'COMPLETED // Team of 5',
+    version: 'Done · Team of 5',
     title: 'VIBETUNE AI',
     description:
       'AI-powered social music platform with REST APIs, real-time messaging via Django Channels + Redis, and i18n support (EN/FR/ES).',
@@ -236,17 +236,17 @@ const projectDeepDives: Record<string, ProjectDeepDive> = {
 const educationItems = [
   {
     school: '1337 Coding School (UM6P) - Khouribga, Morocco',
-    program: 'Software Engineering & Digital Architecture',
+    program: 'Digital Technologies Architecture Program',
     details: [
-      'Current focus: Common Core (CS fundamentals in C/C++), with advanced full-stack and system programming coursework.',
-      'Methodology: project-based learning, peer code reviews, algorithmic optimization, and self-directed learning.',
+      'Current focus: Common Core (CS fundamentals in C/C++), with full-stack and system programming coursework.',
+      'Methodology: project-based learning, peer code reviews, algorithmic optimization, and autonomous self-directed learning.',
     ],
   },
   {
     school: 'CPGE - Casablanca, Morocco',
     program: 'Mathematics & Physics (MPSI/MP)',
     details: [
-      'Intensive preparation in algebra, analysis, and physics with rigorous analytical problem solving.',
+      'Intensive preparation in algorithmics, algebra, analysis, and physics with rigorous analytical problem solving.',
     ],
   },
 ]
